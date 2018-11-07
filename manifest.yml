@@ -1,0 +1,20 @@
+---
+declared-services:
+  conversation-service:
+    label: conversation
+    plan: free
+  tone-analyzer-standard:
+    label: tone_analyzer
+    plan: standard
+applications:
+- name: study-buddy
+  command: npm start
+  path: .
+  instances: 1
+  memory: 512MB
+  services:
+     - conversation-food-coach
+     - tone-analyzer-food-coach
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: f928b2d3-0d78-4429-8f69-6f58f7f0ef87
